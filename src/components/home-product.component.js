@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export default class HomeTodo extends Component {
+export default class HomeProduct extends Component {
     render(){
         return(
             <div align="center">

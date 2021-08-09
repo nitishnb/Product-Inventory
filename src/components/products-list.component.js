@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import  { Link } from 'react-router-dom'
 import axios from 'axios';
 
 import edit from "../edit.png"
 import dlt from "../delete1.png";
 
-const Todo = props => (
+const Product = props => (
     <tr>
-        <td>{props.todo.productid}</td>
-        <td>{props.todo.productName}</td>
-        <td>{props.todo.color}</td>
-        <td>{props.todo.price}</td>
-        <td>{props.todo.inventory}</td>
+        <td>{props.prod.productid}</td>
+        <td>{props.prod.productName}</td>
+        <td>{props.prod.color}</td>
+        <td>{props.prod.price}</td>
+        <td>{props.prod.inventory}</td>
         <td align="center">
-            <Link to={"/edit/"+props.todo.productid}><img src={edit} width="30" height="30" title="Edit"/></Link>
+            <Link to={"/edit/"+props.prod.productid}><img src={edit} width="30" height="30" title="Edit"/></Link>
         </td>
         <td>
-            <Link to={"/delete/"+props.todo.productid}><img src={dlt} width="30" height="30" title="Delete"/></Link>
+            <Link to={"/delete/"+props.prod.productid}><img src={dlt} width="30" height="30" title="Delete"/></Link>
         </td>
     </tr>
 )
 
-export default class TodosList extends Component {
+export default class ProductsList extends Component {
 
     constructor(props) {
         super(props);
@@ -39,9 +39,9 @@ export default class TodosList extends Component {
             })
     }
 
-    todoList() {
-        return this.state.products.map(function(currentTodo, i){
-            return <Todo todo={currentTodo} key={i} />;
+    prodList() {
+        return this.state.products.map(function(currentProduct, i){
+            return <Product prod={currentProduct} key={i} />;
         })
     }
 
@@ -61,7 +61,7 @@ export default class TodosList extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        { this.todoList() }
+                        { this.prodList() }
                     </tbody>
                 </table>
             </div>

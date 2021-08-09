@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import  { Link, Redirect } from 'react-router-dom'
+import  { Link } from 'react-router-dom'
 
-import dlt from "../delete1.png";
 
-export default class EditTodo extends Component {
+export default class EditProduct extends Component {
 
     constructor(props) {
         super(props);
-        this.onChangeTodoDescription = this.onChangeTodoDescription.bind(this);
-        this.onChangeTodoResponsible = this.onChangeTodoResponsible.bind(this);
-        this.onChangeTodoPriority = this.onChangeTodoPriority.bind(this);
-        this.onChangeTodoCompleted = this.onChangeTodoCompleted.bind(this);
+        this.onChangeProductInventory = this.onChangeProductInventory.bind(this);
+        this.onChangeProductProductname = this.onChangeProductProductname.bind(this);
+        this.onChangeProductPrice = this.onChangeProductPrice.bind(this);
+        this.onChangeProductColor = this.onChangeProductColor.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.state = {
             inventory: '',
@@ -36,25 +35,25 @@ export default class EditTodo extends Component {
             })
     }
 
-    onChangeTodoDescription(e) {
+    onChangeProductInventory(e) {
         this.setState({
             inventory: e.target.value
         });
     }
 
-    onChangeTodoResponsible(e) {
+    onChangeProductPrice(e) {
         this.setState({
             price: e.target.value
         });
     }
 
-    onChangeTodoPriority(e) {
+    onChangeProductProductname(e) {
         this.setState({
             productName: e.target.value
         });
     }
 
-    onChangeTodoCompleted(e) {
+    onChangeProductColor(e) {
         this.setState({
             color: e.target.value
         });
@@ -89,7 +88,7 @@ export default class EditTodo extends Component {
                         <input  type="text"
                                 className="form-control"
                                 value={this.state.inventory}
-                                onChange={this.onChangeTodoDescription}
+                                onChange={this.onChangeProductInventory}
                                 />
                     </div>
                     <div className="form-group">
@@ -98,7 +97,7 @@ export default class EditTodo extends Component {
                                 type="text" 
                                 className="form-control"
                                 value={this.state.price}
-                                onChange={this.onChangeTodoResponsible}
+                                onChange={this.onChangeProductPrice}
                                 />
                     </div>
                     <div className="form-group">
@@ -107,7 +106,7 @@ export default class EditTodo extends Component {
                                 type="text" 
                                 className="form-control"
                                 value={this.state.productName}
-                                onChange={this.onChangeTodoPriority}
+                                onChange={this.onChangeProductProductname}
                                 />
                     </div>
                     <div className="form-group">
@@ -116,7 +115,7 @@ export default class EditTodo extends Component {
                                 type="text" 
                                 className="form-control"
                                 value={this.state.color}
-                                onChange={this.onChangeTodoCompleted}
+                                onChange={this.onChangeProductColor}
                                 />
                     </div>
                     <br />

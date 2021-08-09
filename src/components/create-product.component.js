@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-export default class CreateTodo extends Component {
+export default class CreateProduct extends Component {
 
     constructor(props) {
         super(props);
         this.onChangeproductid = this.onChangeproductid.bind(this);
-        this.onChangeTodoDescription = this.onChangeTodoDescription.bind(this);
-        this.onChangeTodoResponsible = this.onChangeTodoResponsible.bind(this);
-        this.onChangeTodoPriority = this.onChangeTodoPriority.bind(this);
+        this.onChangeProductInventory = this.onChangeProductInventory.bind(this);
+        this.onChangeProductPrice = this.onChangeProductPrice.bind(this);
+        this.onChangeProductName = this.onChangeProductName.bind(this);
         this.onChangecolor = this.onChangecolor.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
@@ -28,19 +27,19 @@ export default class CreateTodo extends Component {
         });
     }
 
-    onChangeTodoDescription(e) {
+    onChangeProductInventory(e) {
         this.setState({
             inventory: e.target.value
         });
     }
 
-    onChangeTodoResponsible(e) {
+    onChangeProductPrice(e) {
         this.setState({
             price: e.target.value
         });
     }
 
-    onChangeTodoPriority(e) {
+    onChangeProductName(e) {
         this.setState({
             productName: e.target.value
         });
@@ -88,7 +87,7 @@ export default class CreateTodo extends Component {
     render() {
         return (
             <div style={{marginTop: 10}}>
-                <h3>Create New Todo</h3>
+                <h3>Create New Product</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group"> 
                         <label>Product ID: </label>
@@ -103,7 +102,7 @@ export default class CreateTodo extends Component {
                         <input  type="text"
                                 className="form-control"
                                 value={this.state.inventory}
-                                onChange={this.onChangeTodoDescription}
+                                onChange={this.onChangeProductInventory}
                                 />
                     </div>
                     <div className="form-group">
@@ -112,7 +111,7 @@ export default class CreateTodo extends Component {
                                 type="text" 
                                 className="form-control"
                                 value={this.state.price}
-                                onChange={this.onChangeTodoResponsible}
+                                onChange={this.onChangeProductPrice}
                                 />
                     </div>
                     <div className="form-group"> 
@@ -120,7 +119,7 @@ export default class CreateTodo extends Component {
                         <input  type="text"
                                 className="form-control"
                                 value={this.state.productName}
-                                onChange={this.onChangeTodoPriority}
+                                onChange={this.onChangeProductName}
                                 />
                     </div>
                     <div className="form-group"> 
