@@ -38,7 +38,6 @@ export default class DeleteProduct extends Component {
                     console.log(res.data);
                     alert(`Productid : ${this.props.match.params.id} Deleted succesfully..!`);
             });
-            this.props.history.push('/')
         } else {
             alert("Deletion Failed")
         }

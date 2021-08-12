@@ -29,12 +29,11 @@ class App extends Component {
       try {
         await Auth.currentSession();
         this.userHasAuthenticated(true);
+        console.log(this.props.history);
         this.props.history.push("/view");
       }
       catch(e) {
-        if (e !== 'No current user') {
-          alert(e);
-        }
+        console.log("Error", e);
       }
   }
   render() {
